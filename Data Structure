@@ -1,0 +1,17 @@
+public class createTable {
+	public static void main(String[] args) throws InterruptedException 
+	{ 
+				Map<String, String> map = new LinkedHashMap<String, String>();
+				map.put("id", "1" );
+				map.put("Name", "Srinija");
+				map.put("Phone", "2035433992");
+				map.put("Address", "New Jeresy");
+				 Iterator it = map.entrySet().iterator();
+				    while (it.hasNext()) {
+				        Map.Entry pair = (Map.Entry)it.next();
+				        System.out.println(pair.getKey() + " = " + pair.getValue());
+				        it.remove(); // avoids a ConcurrentModificationException
+				    }
+				
+	}
+}
